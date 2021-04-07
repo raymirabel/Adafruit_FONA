@@ -1209,7 +1209,7 @@ uint8_t Adafruit_FONA::getGPS(uint8_t arg, char *buffer, uint8_t maxbuff) {
 
   p += 6;
 
-  uint8_t len = max(maxbuff - 1, (int)strlen(p));
+  uint8_t len = min(maxbuff - 1, (int)strlen(p));
   strncpy(buffer, p, len);
   buffer[len] = 0;
 
